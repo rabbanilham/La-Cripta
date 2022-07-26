@@ -9,12 +9,23 @@
 /* Begin PBXBuildFile section */
 		3893E212288F91E600F7AB33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893E211288F91E600F7AB33 /* AppDelegate.swift */; };
 		3893E214288F91E600F7AB33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893E213288F91E600F7AB33 /* SceneDelegate.swift */; };
-		3893E216288F91E600F7AB33 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893E215288F91E600F7AB33 /* HomeViewController.swift */; };
+		3893E216288F91E600F7AB33 /* ToplistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893E215288F91E600F7AB33 /* ToplistsViewController.swift */; };
 		3893E21B288F91EA00F7AB33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3893E21A288F91EA00F7AB33 /* Assets.xcassets */; };
 		3893E21E288F91EA00F7AB33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3893E21C288F91EA00F7AB33 /* LaunchScreen.storyboard */; };
 		3893E229288F91EA00F7AB33 /* La_CriptaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893E228288F91EA00F7AB33 /* La_CriptaTests.swift */; };
 		3893E233288F91EA00F7AB33 /* La_CriptaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893E232288F91EA00F7AB33 /* La_CriptaUITests.swift */; };
 		3893E235288F91EA00F7AB33 /* La_CriptaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893E234288F91EA00F7AB33 /* La_CriptaUITestsLaunchTests.swift */; };
+		3893E245288F97BA00F7AB33 /* CryptocompareAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893E244288F97BA00F7AB33 /* CryptocompareAPI.swift */; };
+		3893E24B288F99B500F7AB33 /* ToplistsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893E24A288F99B500F7AB33 /* ToplistsTableViewCell.swift */; };
+		3893E24F288F9DC000F7AB33 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893E24E288F9DC000F7AB33 /* UIView+Extension.swift */; };
+		3893E252288FA3E500F7AB33 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893E251288FA3E500F7AB33 /* NewsViewController.swift */; };
+		3893E255288FA46500F7AB33 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893E254288FA46500F7AB33 /* NewsTableViewCell.swift */; };
+		3893E257288FAEAF00F7AB33 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893E256288FAEAF00F7AB33 /* String+Extension.swift */; };
+		3893E25B288FB09300F7AB33 /* LCNewsDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893E25A288FB09300F7AB33 /* LCNewsDataResponse.swift */; };
+		3893E25E288FC12000F7AB33 /* NSMutableAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893E25D288FC12000F7AB33 /* NSMutableAttributedString+Extension.swift */; };
+		568B8987C817A54B8CCFACE9 /* Pods_La_Cripta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4296554F448C913BC50A511E /* Pods_La_Cripta.framework */; };
+		C69D766DFDC3D6AB190E235E /* Pods_La_CriptaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA88E3464E66B526CBEA8DC6 /* Pods_La_CriptaTests.framework */; };
+		D9814304506FE59A71F57303 /* Pods_La_Cripta_La_CriptaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0085AABF9B3E72D5F2EDB191 /* Pods_La_Cripta_La_CriptaUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +46,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0085AABF9B3E72D5F2EDB191 /* Pods_La_Cripta_La_CriptaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_La_Cripta_La_CriptaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		160B221C185FD1F8F5AC2917 /* Pods-La CriptaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-La CriptaTests.release.xcconfig"; path = "Target Support Files/Pods-La CriptaTests/Pods-La CriptaTests.release.xcconfig"; sourceTree = "<group>"; };
 		3893E20E288F91E600F7AB33 /* La Cripta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "La Cripta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3893E211288F91E600F7AB33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3893E213288F91E600F7AB33 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3893E215288F91E600F7AB33 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3893E215288F91E600F7AB33 /* ToplistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToplistsViewController.swift; sourceTree = "<group>"; };
 		3893E21A288F91EA00F7AB33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3893E21D288F91EA00F7AB33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3893E21F288F91EA00F7AB33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +60,21 @@
 		3893E22E288F91EA00F7AB33 /* La CriptaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "La CriptaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3893E232288F91EA00F7AB33 /* La_CriptaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = La_CriptaUITests.swift; sourceTree = "<group>"; };
 		3893E234288F91EA00F7AB33 /* La_CriptaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = La_CriptaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3893E244288F97BA00F7AB33 /* CryptocompareAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptocompareAPI.swift; sourceTree = "<group>"; };
+		3893E24A288F99B500F7AB33 /* ToplistsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToplistsTableViewCell.swift; sourceTree = "<group>"; };
+		3893E24E288F9DC000F7AB33 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		3893E251288FA3E500F7AB33 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		3893E254288FA46500F7AB33 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		3893E256288FAEAF00F7AB33 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		3893E25A288FB09300F7AB33 /* LCNewsDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCNewsDataResponse.swift; sourceTree = "<group>"; };
+		3893E25D288FC12000F7AB33 /* NSMutableAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extension.swift"; sourceTree = "<group>"; };
+		3DB606B534D3393D282F32E1 /* Pods-La Cripta-La CriptaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-La Cripta-La CriptaUITests.debug.xcconfig"; path = "Target Support Files/Pods-La Cripta-La CriptaUITests/Pods-La Cripta-La CriptaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4296554F448C913BC50A511E /* Pods_La_Cripta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_La_Cripta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BF0381F06BCC05BC80966E1 /* Pods-La Cripta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-La Cripta.debug.xcconfig"; path = "Target Support Files/Pods-La Cripta/Pods-La Cripta.debug.xcconfig"; sourceTree = "<group>"; };
+		D7A2D00EB191697E163ADCEF /* Pods-La Cripta-La CriptaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-La Cripta-La CriptaUITests.release.xcconfig"; path = "Target Support Files/Pods-La Cripta-La CriptaUITests/Pods-La Cripta-La CriptaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DA88E3464E66B526CBEA8DC6 /* Pods_La_CriptaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_La_CriptaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA9240F8D78D2FD0544AC8A1 /* Pods-La Cripta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-La Cripta.release.xcconfig"; path = "Target Support Files/Pods-La Cripta/Pods-La Cripta.release.xcconfig"; sourceTree = "<group>"; };
+		F7AC8DD7A03AC7799DFDD2EF /* Pods-La CriptaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-La CriptaTests.debug.xcconfig"; path = "Target Support Files/Pods-La CriptaTests/Pods-La CriptaTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				568B8987C817A54B8CCFACE9 /* Pods_La_Cripta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C69D766DFDC3D6AB190E235E /* Pods_La_CriptaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9814304506FE59A71F57303 /* Pods_La_Cripta_La_CriptaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +112,8 @@
 				3893E227288F91EA00F7AB33 /* La CriptaTests */,
 				3893E231288F91EA00F7AB33 /* La CriptaUITests */,
 				3893E20F288F91E600F7AB33 /* Products */,
+				5F24F332C7A512BFBC309B0B /* Pods */,
+				92F371AF0DB10E1B410FAAF1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,9 +130,10 @@
 		3893E210288F91E600F7AB33 /* La Cripta */ = {
 			isa = PBXGroup;
 			children = (
-				3893E211288F91E600F7AB33 /* AppDelegate.swift */,
-				3893E213288F91E600F7AB33 /* SceneDelegate.swift */,
-				3893E215288F91E600F7AB33 /* HomeViewController.swift */,
+				3893E24C288F9DAD00F7AB33 /* Utility */,
+				3893E246288F992C00F7AB33 /* App */,
+				3893E241288F974300F7AB33 /* DataLayer */,
+				3893E247288F995600F7AB33 /* PresentationLayer */,
 				3893E21A288F91EA00F7AB33 /* Assets.xcassets */,
 				3893E21C288F91EA00F7AB33 /* LaunchScreen.storyboard */,
 				3893E21F288F91EA00F7AB33 /* Info.plist */,
@@ -124,6 +158,148 @@
 			path = "La CriptaUITests";
 			sourceTree = "<group>";
 		};
+		3893E241288F974300F7AB33 /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				3893E242288F976B00F7AB33 /* API */,
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		3893E242288F976B00F7AB33 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				3893E243288F978200F7AB33 /* Remote */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		3893E243288F978200F7AB33 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				3893E259288FB08400F7AB33 /* News */,
+				3893E258288FB07B00F7AB33 /* CryptoCompare */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		3893E246288F992C00F7AB33 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3893E211288F91E600F7AB33 /* AppDelegate.swift */,
+				3893E213288F91E600F7AB33 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3893E247288F995600F7AB33 /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				3893E250288FA3D300F7AB33 /* News */,
+				3893E248288F998E00F7AB33 /* Toplists */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		3893E248288F998E00F7AB33 /* Toplists */ = {
+			isa = PBXGroup;
+			children = (
+				3893E249288F999F00F7AB33 /* TableViewCell */,
+				3893E215288F91E600F7AB33 /* ToplistsViewController.swift */,
+			);
+			path = Toplists;
+			sourceTree = "<group>";
+		};
+		3893E249288F999F00F7AB33 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3893E24A288F99B500F7AB33 /* ToplistsTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		3893E24C288F9DAD00F7AB33 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				3893E24D288F9DB400F7AB33 /* Extensions */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		3893E24D288F9DB400F7AB33 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3893E24E288F9DC000F7AB33 /* UIView+Extension.swift */,
+				3893E256288FAEAF00F7AB33 /* String+Extension.swift */,
+				3893E25D288FC12000F7AB33 /* NSMutableAttributedString+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3893E250288FA3D300F7AB33 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				3893E253288FA45000F7AB33 /* TableViewCell */,
+				3893E251288FA3E500F7AB33 /* NewsViewController.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		3893E253288FA45000F7AB33 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3893E254288FA46500F7AB33 /* NewsTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		3893E258288FB07B00F7AB33 /* CryptoCompare */ = {
+			isa = PBXGroup;
+			children = (
+				3893E244288F97BA00F7AB33 /* CryptocompareAPI.swift */,
+			);
+			path = CryptoCompare;
+			sourceTree = "<group>";
+		};
+		3893E259288FB08400F7AB33 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				3893E25C288FB13900F7AB33 /* Entity */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		3893E25C288FB13900F7AB33 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				3893E25A288FB09300F7AB33 /* LCNewsDataResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		5F24F332C7A512BFBC309B0B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8BF0381F06BCC05BC80966E1 /* Pods-La Cripta.debug.xcconfig */,
+				DA9240F8D78D2FD0544AC8A1 /* Pods-La Cripta.release.xcconfig */,
+				3DB606B534D3393D282F32E1 /* Pods-La Cripta-La CriptaUITests.debug.xcconfig */,
+				D7A2D00EB191697E163ADCEF /* Pods-La Cripta-La CriptaUITests.release.xcconfig */,
+				F7AC8DD7A03AC7799DFDD2EF /* Pods-La CriptaTests.debug.xcconfig */,
+				160B221C185FD1F8F5AC2917 /* Pods-La CriptaTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		92F371AF0DB10E1B410FAAF1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4296554F448C913BC50A511E /* Pods_La_Cripta.framework */,
+				0085AABF9B3E72D5F2EDB191 /* Pods_La_Cripta_La_CriptaUITests.framework */,
+				DA88E3464E66B526CBEA8DC6 /* Pods_La_CriptaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +307,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3893E238288F91EA00F7AB33 /* Build configuration list for PBXNativeTarget "La Cripta" */;
 			buildPhases = (
+				178D8C2C33E2F96CBE9366C1 /* [CP] Check Pods Manifest.lock */,
 				3893E20A288F91E600F7AB33 /* Sources */,
 				3893E20B288F91E600F7AB33 /* Frameworks */,
 				3893E20C288F91E600F7AB33 /* Resources */,
+				4AA7044A16CDCF1354458592 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -148,6 +326,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3893E23B288F91EA00F7AB33 /* Build configuration list for PBXNativeTarget "La CriptaTests" */;
 			buildPhases = (
+				8538EB9523354F1C8EF9F210 /* [CP] Check Pods Manifest.lock */,
 				3893E220288F91EA00F7AB33 /* Sources */,
 				3893E221288F91EA00F7AB33 /* Frameworks */,
 				3893E222288F91EA00F7AB33 /* Resources */,
@@ -166,9 +345,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3893E23E288F91EA00F7AB33 /* Build configuration list for PBXNativeTarget "La CriptaUITests" */;
 			buildPhases = (
+				39D8AFEC1C9E0847808F8225 /* [CP] Check Pods Manifest.lock */,
 				3893E22A288F91EA00F7AB33 /* Sources */,
 				3893E22B288F91EA00F7AB33 /* Frameworks */,
 				3893E22C288F91EA00F7AB33 /* Resources */,
+				7812952AC3242F1709C6E6CA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -249,14 +430,125 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		178D8C2C33E2F96CBE9366C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-La Cripta-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		39D8AFEC1C9E0847808F8225 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-La Cripta-La CriptaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4AA7044A16CDCF1354458592 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-La Cripta/Pods-La Cripta-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-La Cripta/Pods-La Cripta-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-La Cripta/Pods-La Cripta-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7812952AC3242F1709C6E6CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-La Cripta-La CriptaUITests/Pods-La Cripta-La CriptaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-La Cripta-La CriptaUITests/Pods-La Cripta-La CriptaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-La Cripta-La CriptaUITests/Pods-La Cripta-La CriptaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8538EB9523354F1C8EF9F210 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-La CriptaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3893E20A288F91E600F7AB33 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3893E216288F91E600F7AB33 /* HomeViewController.swift in Sources */,
+				3893E24F288F9DC000F7AB33 /* UIView+Extension.swift in Sources */,
+				3893E257288FAEAF00F7AB33 /* String+Extension.swift in Sources */,
+				3893E25E288FC12000F7AB33 /* NSMutableAttributedString+Extension.swift in Sources */,
+				3893E216288F91E600F7AB33 /* ToplistsViewController.swift in Sources */,
+				3893E255288FA46500F7AB33 /* NewsTableViewCell.swift in Sources */,
 				3893E212288F91E600F7AB33 /* AppDelegate.swift in Sources */,
 				3893E214288F91E600F7AB33 /* SceneDelegate.swift in Sources */,
+				3893E245288F97BA00F7AB33 /* CryptocompareAPI.swift in Sources */,
+				3893E25B288FB09300F7AB33 /* LCNewsDataResponse.swift in Sources */,
+				3893E252288FA3E500F7AB33 /* NewsViewController.swift in Sources */,
+				3893E24B288F99B500F7AB33 /* ToplistsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +712,7 @@
 		};
 		3893E239288F91EA00F7AB33 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BF0381F06BCC05BC80966E1 /* Pods-La Cripta.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -447,6 +740,7 @@
 		};
 		3893E23A288F91EA00F7AB33 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA9240F8D78D2FD0544AC8A1 /* Pods-La Cripta.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -474,6 +768,7 @@
 		};
 		3893E23C288F91EA00F7AB33 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7AC8DD7A03AC7799DFDD2EF /* Pods-La CriptaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -494,6 +789,7 @@
 		};
 		3893E23D288F91EA00F7AB33 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 160B221C185FD1F8F5AC2917 /* Pods-La CriptaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -514,6 +810,7 @@
 		};
 		3893E23F288F91EA00F7AB33 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DB606B534D3393D282F32E1 /* Pods-La Cripta-La CriptaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +829,7 @@
 		};
 		3893E240288F91EA00F7AB33 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7A2D00EB191697E163ADCEF /* Pods-La Cripta-La CriptaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
