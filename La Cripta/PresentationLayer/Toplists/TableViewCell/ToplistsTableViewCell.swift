@@ -81,7 +81,15 @@ final class ToplistsTableViewCell: UITableViewCell {
         ])
     }
     
-    func handleTickerValue() {
+    func fillWithDummyData() {
+        nameLabel.text = "BTC"
+        fullNameLabel.text = "Bitcoin"
+        priceLabel.text = "$ 42,303.9"
+        tickerLabel.text = "-94.63(0.22%)"
+        handleTickerValue()
+    }
+    
+    private func handleTickerValue() {
         if tickerLabel.text?.first == "+" {
             tickerView.backgroundColor = .systemGreen
         } else {

@@ -20,11 +20,7 @@ final class ToplistsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "\(ToplistsTableViewCell.self)", for: indexPath) as? ToplistsTableViewCell else { return UITableViewCell() }
-        cell.nameLabel.text = "BTC"
-        cell.fullNameLabel.text = "Bitcoin"
-        cell.priceLabel.text = "$ 42,303.9"
-        cell.tickerLabel.text = "-94.63(0.22%)"
-        cell.handleTickerValue()
+        cell.fillWithDummyData()
         return cell
     }
     

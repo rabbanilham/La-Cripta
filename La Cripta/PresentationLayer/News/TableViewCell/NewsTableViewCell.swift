@@ -46,7 +46,6 @@ final class NewsTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 14, weight: .regular)
         label.numberOfLines = 0
-        label.textAlignment = .justified
         return label
     }()
     
@@ -199,17 +198,24 @@ final class NewsTableViewCell: UITableViewCell {
             let news: LCNewsDataResponse = try JSONDecoder().decode(LCNewsDataResponse.self, from: jsonData)
             guard news.articles.isEmpty == false else { return }
             let article = news.articles[0]
-            if let url = URL(string: article.urlToImage) {
-                articleImageView.kf.indicatorType = .activity
-                articleImageView.kf.setImage(with: url, options: [.transition(.fade(0.25))])
-            }
-            articleTitleLabel.text = article.title
-            articleDescriptionLabel.text = article.articleDescription
-            articleAuthorLabel.text = article.author
-            articlePublishTimeLabel.text = article.publishedAt.convertToDateInterval() + " ago"
+            self.fill(with: article)
         } catch {
             print(String(describing: error))
         }
+    }
+    
+    func fill(with data: LCArticleResponse) {
+        if let url = URL(string: data.urlToImage) {
+            articleImageView.kf.indicatorType = .activity
+            articleImageView.kf.setImage(with: url, options: [.transition(.fade(0.25))])
+        }
+        articleTitleLabel.text = data.title
+        articleDescriptionLabel.attributedText = NSMutableAttributedString(
+            string: data.articleDescription
+        )
+        .formatForNewsDescription()
+        articleAuthorLabel.text = data.author
+        articlePublishTimeLabel.text = data.publishedAt.convertToDateInterval() + " ago"
     }
     
     @objc private func shareButtonTapped() {
