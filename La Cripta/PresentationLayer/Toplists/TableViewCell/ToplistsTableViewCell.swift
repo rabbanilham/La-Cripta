@@ -11,7 +11,7 @@ final class ToplistsTableViewCell: UITableViewCell {
     var nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 18, weight: .medium)
+        label.font = .systemFont(ofSize: 18, weight: .semibold)
         return label
     }()
     var fullNameLabel: UILabel = {
@@ -24,7 +24,7 @@ final class ToplistsTableViewCell: UITableViewCell {
     var priceLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 18, weight: .medium)
+        label.font = .systemFont(ofSize: 18, weight: .semibold)
         return label
     }()
     var tickerView: UIView = {
@@ -81,23 +81,29 @@ final class ToplistsTableViewCell: UITableViewCell {
         ])
     }
     
-    func fillWithDummyData() {
-        nameLabel.text = "BTC"
-        fullNameLabel.text = "Bitcoin"
-        priceLabel.text = "$ 42,303.9"
-        tickerLabel.text = "-94.63(0.22%)"
-        handleTickerValue()
-    }
-    
-    private func handleTickerValue() {
-        if tickerLabel.text?.first == "+" {
+    func fill(with data: LCToplistsDataResponse) {
+        contentView.fadeOut()
+        nameLabel.text = data.coinInfo.name
+        fullNameLabel.text = data.coinInfo.fullName
+        guard let price = data.raw?.usd.price,
+              let change = data.raw?.usd.change24Hour
+        else { return }
+        let roundedChange = round(change * 100) / 100.0
+        var changePercentage = ((price + change) / price)
+        var changeString = ""
+        if change > 0 {
+            changePercentage = (changePercentage - 1.0) * 100
+            let changePercentageString = String(format: "%.2f", changePercentage)
+            changeString = "+\(roundedChange) (+\(changePercentageString)%)"
             tickerView.backgroundColor = .systemGreen
         } else {
+            changePercentage = (1.0 - changePercentage) * 100
+            let changePercentageString = String(format: "%.2f", changePercentage)
+            changeString = "\(roundedChange) (-\(changePercentageString)%)"
             tickerView.backgroundColor = .systemRed
         }
+        priceLabel.text = "\(price)".convertToCurrency()
+        tickerLabel.text = changeString
+        contentView.fadeIn()
     }
-    
-//    func fill(with data: ) {
-//        
-//    }
 }

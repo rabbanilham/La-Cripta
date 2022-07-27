@@ -24,4 +24,16 @@ extension String {
         guard let finalString = intervalFormatter.string(from: finalDate, to: Date()) else { return self }
         return finalString
     }
+    
+    func convertToCurrency() -> String {
+        if let value = Double(self) {
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .currencyAccounting
+            formatter.locale = Locale(identifier: "en_US")
+            if let str = formatter.string(for: value) {
+                return str
+            }
+        }
+        return ""
+    }
 }
