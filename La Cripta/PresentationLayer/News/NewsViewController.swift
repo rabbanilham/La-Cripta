@@ -29,6 +29,11 @@ final class NewsViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        clearKingfisherCache()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -169,8 +174,11 @@ final class NewsViewController: UITableViewController {
     }
     
     private func performDismissView() {
-        Kingfisher.KingfisherManager.shared.cache.clearCache()
         self.dismiss(animated: true)
+    }
+    
+    private func clearKingfisherCache() {
+        Kingfisher.KingfisherManager.shared.cache.clearCache()
     }
     
     @objc private func dismissView() {

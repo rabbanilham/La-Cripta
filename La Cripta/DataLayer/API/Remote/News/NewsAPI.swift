@@ -37,7 +37,7 @@ struct NewsAPI {
         _ completion: @escaping (LCNewsDataResponse?, AFError?) -> Void
     ) {
         let headers: HTTPHeaders = [
-            "X-Api-Key" : "aae0541e580544f8a6370ccb489a2b00",
+            "X-Api-Key" : "e57cdec869d94425adb3725d2ea6df39",
             "Accept": "application/json"
         ]
         AF.request(

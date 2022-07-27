@@ -7,11 +7,18 @@
 
 import UIKit
 
+enum valueChangeDuration {
+    case day
+    case hour
+    case last24Hour
+}
+
 final class ToplistsViewController: UITableViewController {
     
     private var api: CryptocompareAPI = CryptocompareAPI.shared
     private var toplists: Array<LCToplistsDataResponse> = []
     private var newsApiEndpoint: NewsAPI.newsEndpoint = .everything
+    private var changeDuration: valueChangeDuration = .day
     private var loadingIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView()
         indicator.translatesAutoresizingMaskIntoConstraints = false
@@ -19,10 +26,10 @@ final class ToplistsViewController: UITableViewController {
         indicator.color = .label
         return indicator
     }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        setupNavigationBar()
         setupLoadingIndicator()
         setupRefreshControl()
         loadToplists()
@@ -40,7 +47,7 @@ final class ToplistsViewController: UITableViewController {
         ) as? ToplistsTableViewCell
         else { return UITableViewCell() }
         let data = toplists[row]
-        cell.fill(with: data)
+        cell.fill(with: data, changeDuration: self.changeDuration)
         return cell
     }
     
@@ -48,6 +55,11 @@ final class ToplistsViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         let row = indexPath.row
         presentNewsController(index: row)
+    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let row = indexPath.row
+        return goToLiveUpdateController(index: row)
     }
     
     private func setupTableView() {
@@ -119,6 +131,98 @@ final class ToplistsViewController: UITableViewController {
         viewController.navigationItem.title = "\(coinName) News"
         let navigationController = UINavigationController(rootViewController: viewController)
         present(navigationController, animated: true)
+    }
+    
+    private func goToLiveUpdateController(index: Int) -> UISwipeActionsConfiguration {
+        let coin = toplists[index]
+        let action = UIContextualAction(
+            style: .normal,
+            title: "Live Update"
+        ) { [weak self] action, view, completion in
+            guard let self = self else { return }
+            let viewController: LiveUpdatesViewController = {
+                switch self.changeDuration {
+                case .day:
+                    return LiveUpdatesViewController(
+                        coinName: coin.coinInfo.name,
+                        fullName: coin.coinInfo.fullName,
+                        openValue: coin.raw?.usd.openDay
+                    )
+                case .hour:
+                    return LiveUpdatesViewController(
+                        coinName: coin.coinInfo.name,
+                        fullName: coin.coinInfo.fullName,
+                        openValue: coin.raw?.usd.openHour
+                    )
+                case .last24Hour:
+                    return LiveUpdatesViewController(
+                        coinName: coin.coinInfo.name,
+                        fullName: coin.coinInfo.fullName,
+                        openValue: coin.raw?.usd.open24Hour
+                    )
+                }
+            }()
+            viewController.navigationItem.title = "\(coin.coinInfo.name) Live Update"
+            completion(true)
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
+        let swipeActions = UISwipeActionsConfiguration(actions: [action])
+        return swipeActions
+    }
+    
+    private func setupNavigationBar() {
+        navigationController?.navigationBar.tintColor = .label
+        let changeDurationButton = UIBarButtonItem(
+            image: UIImage(systemName: "clock.arrow.2.circlepath"),
+            style: .plain,
+            target: self,
+            action: nil
+        )
+        changeDurationButton.menu = UIMenu(
+            title: "Show value change by:",
+            image: UIImage(systemName: "clock.arrow.2.circlepath"),
+            identifier: nil,
+            options: .displayInline,
+            children: durationMenuElements()
+        )
+        navigationItem.rightBarButtonItem = changeDurationButton
+    }
+    
+    private func durationMenuElements() -> [UIMenuElement] {
+        var menus: [UIMenuElement] = []
+        
+        let byDay = UIAction(
+            title: "Day",
+            image: nil,
+            identifier: nil
+        ) { [weak self] _ in
+            guard let self = self else { return }
+            self.changeDuration = .day
+            self.tableView.reloadData()
+        }
+        let byHour = UIAction(
+            title: "Hour",
+            image: nil,
+            identifier: nil
+        ) { [weak self] _ in
+            guard let self = self else { return }
+            self.changeDuration = .hour
+            self.tableView.reloadData()
+        }
+        let by24Hour = UIAction(
+            title: "24 Hour",
+            image: nil,
+            identifier: nil
+        ) { [weak self] _ in
+            guard let self = self else { return }
+            self.changeDuration = .last24Hour
+            self.tableView.reloadData()
+        }
+        menus.append(byDay)
+        menus.append(byHour)
+        menus.append(by24Hour)
+        
+        return menus
     }
 
 }

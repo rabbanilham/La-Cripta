@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		38502E2F2890CD98003E0C75 /* CryptoCompareWebSockets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38502E2E2890CD98003E0C75 /* CryptoCompareWebSockets.swift */; };
 		38502E342890CE45003E0C75 /* LCSubscriptionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38502E332890CE45003E0C75 /* LCSubscriptionMessage.swift */; };
 		38502E372890DF5F003E0C75 /* LiveUpdatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38502E362890DF5F003E0C75 /* LiveUpdatesViewController.swift */; };
+		38502E392890EA95003E0C75 /* LCWSDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38502E382890EA95003E0C75 /* LCWSDataResponse.swift */; };
 		3893E212288F91E600F7AB33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893E211288F91E600F7AB33 /* AppDelegate.swift */; };
 		3893E214288F91E600F7AB33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893E213288F91E600F7AB33 /* SceneDelegate.swift */; };
 		3893E216288F91E600F7AB33 /* ToplistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893E215288F91E600F7AB33 /* ToplistsViewController.swift */; };
@@ -53,9 +53,9 @@
 /* Begin PBXFileReference section */
 		0085AABF9B3E72D5F2EDB191 /* Pods_La_Cripta_La_CriptaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_La_Cripta_La_CriptaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		160B221C185FD1F8F5AC2917 /* Pods-La CriptaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-La CriptaTests.release.xcconfig"; path = "Target Support Files/Pods-La CriptaTests/Pods-La CriptaTests.release.xcconfig"; sourceTree = "<group>"; };
-		38502E2E2890CD98003E0C75 /* CryptoCompareWebSockets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCompareWebSockets.swift; sourceTree = "<group>"; };
 		38502E332890CE45003E0C75 /* LCSubscriptionMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCSubscriptionMessage.swift; sourceTree = "<group>"; };
 		38502E362890DF5F003E0C75 /* LiveUpdatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveUpdatesViewController.swift; sourceTree = "<group>"; };
+		38502E382890EA95003E0C75 /* LCWSDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCWSDataResponse.swift; sourceTree = "<group>"; };
 		3893E20E288F91E600F7AB33 /* La Cripta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "La Cripta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3893E211288F91E600F7AB33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3893E213288F91E600F7AB33 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				38502E322890CE03003E0C75 /* Entity */,
-				38502E2E2890CD98003E0C75 /* CryptoCompareWebSockets.swift */,
 			);
 			path = WebSockets;
 			sourceTree = "<group>";
@@ -137,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				38502E332890CE45003E0C75 /* LCSubscriptionMessage.swift */,
+				38502E382890EA95003E0C75 /* LCWSDataResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -600,7 +600,7 @@
 				3893E216288F91E600F7AB33 /* ToplistsViewController.swift in Sources */,
 				3893E255288FA46500F7AB33 /* NewsTableViewCell.swift in Sources */,
 				3893E212288F91E600F7AB33 /* AppDelegate.swift in Sources */,
-				38502E2F2890CD98003E0C75 /* CryptoCompareWebSockets.swift in Sources */,
+				38502E392890EA95003E0C75 /* LCWSDataResponse.swift in Sources */,
 				3893E214288F91E600F7AB33 /* SceneDelegate.swift in Sources */,
 				3893E245288F97BA00F7AB33 /* CryptocompareAPI.swift in Sources */,
 				3893E25B288FB09300F7AB33 /* LCNewsDataResponse.swift in Sources */,
