@@ -13,15 +13,14 @@ struct LCNewsDataResponse: Codable {
     let articles: [LCArticleResponse]
 }
 
-// MARK: - Article
 struct LCArticleResponse: Codable {
-    let source: Source
+    let source: LCNewsSourceResponse
     let author: String?
     let title, articleDescription: String
     let url: String
-    let urlToImage: String
+    let urlToImage: String?
     let publishedAt: String
-    let content: String
+    let content: String?
 
     enum CodingKeys: String, CodingKey {
         case source, author, title
@@ -30,8 +29,7 @@ struct LCArticleResponse: Codable {
     }
 }
 
-// MARK: - Source
-struct Source: Codable {
+struct LCNewsSourceResponse: Codable {
     let id: String?
     let name: String
 }

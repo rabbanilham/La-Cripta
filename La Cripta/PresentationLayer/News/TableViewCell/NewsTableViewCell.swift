@@ -10,7 +10,7 @@ import Kingfisher
 
 final class NewsTableViewCell: UITableViewCell {
     
-    var borderView: UIView = {
+    private var borderView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemBackground
@@ -23,7 +23,6 @@ final class NewsTableViewCell: UITableViewCell {
         view.layer.shadowOffset = CGSize(width: 0, height: 0)
         return view
     }()
-    
     var articleImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -32,24 +31,21 @@ final class NewsTableViewCell: UITableViewCell {
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
-    
-    var articleTitleLabel: UILabel = {
+    private var articleTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.numberOfLines = 0
         return label
     }()
-    
-    var articleDescriptionLabel: UILabel = {
+    private var articleDescriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 14, weight: .regular)
         label.numberOfLines = 0
         return label
     }()
-    
-    var bottomSquareView: UIView = {
+    private var bottomSquareView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.clipsToBounds = true
@@ -58,8 +54,7 @@ final class NewsTableViewCell: UITableViewCell {
         view.heightAnchor.constraint(greaterThanOrEqualToConstant: 10).isActive = true
         return view
     }()
-    
-    var articleAuthorLabel: UILabel = {
+    private var articleAuthorLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 1
@@ -67,8 +62,7 @@ final class NewsTableViewCell: UITableViewCell {
         label.textColor = .systemBackground
         return label
     }()
-    
-    var articlePublishTimeLabel: UILabel = {
+    private var articlePublishTimeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 1
@@ -77,8 +71,7 @@ final class NewsTableViewCell: UITableViewCell {
         label.textColor = .systemBackground
         return label
     }()
-    
-    var shareButton: UIButton = {
+    private var shareButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.tintColor = .systemBackground
@@ -87,19 +80,7 @@ final class NewsTableViewCell: UITableViewCell {
         return button
     }()
     
-    var saveButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.tintColor = .systemBackground
-        button.setImage(UIImage(systemName: "bookmark"), for: .normal)
-        button.addTarget(Any.self, action: #selector(saveButtonTapped), for: .touchUpInside)
-        return button
-    }()
-    
-    typealias OnShareButtonTap = () -> Void
-    var onShareButtonTap: OnShareButtonTap?
-    typealias OnSaveButtonTap = () -> Void
-    var onSaveButtonTap: OnShareButtonTap?
+    var onShareButtonTap: (() -> Void)?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -122,8 +103,7 @@ final class NewsTableViewCell: UITableViewCell {
         bottomSquareView.addSubviews(
             articleAuthorLabel,
             articlePublishTimeLabel,
-            shareButton,
-            saveButton
+            shareButton
         )
         
         let margin = contentView.layoutMarginsGuide
@@ -156,56 +136,19 @@ final class NewsTableViewCell: UITableViewCell {
             
             articleAuthorLabel.topAnchor.constraint(equalTo: bottomSquareView.topAnchor, constant: 8),
             articleAuthorLabel.leadingAnchor.constraint(equalTo: bottomSquareView.leadingAnchor, constant: 8),
+            articleAuthorLabel.trailingAnchor.constraint(equalTo: margin.centerXAnchor, constant: UIScreen.main.bounds.width / 5),
             
             articlePublishTimeLabel.topAnchor.constraint(equalTo: articleAuthorLabel.bottomAnchor, constant: 4),
             articlePublishTimeLabel.bottomAnchor.constraint(equalTo: bottomSquareView.bottomAnchor, constant: -8),
             articlePublishTimeLabel.leadingAnchor.constraint(equalTo: articleAuthorLabel.leadingAnchor),
             
             shareButton.trailingAnchor.constraint(equalTo: bottomSquareView.trailingAnchor, constant: -16),
-            shareButton.centerYAnchor.constraint(equalTo: bottomSquareView.centerYAnchor),
-            
-            saveButton.trailingAnchor.constraint(equalTo: shareButton.leadingAnchor, constant: -16),
-            saveButton.centerYAnchor.constraint(equalTo: shareButton.centerYAnchor)
+            shareButton.centerYAnchor.constraint(equalTo: bottomSquareView.centerYAnchor)
         ])
     }
     
-    func fillWithDummyData() {
-        let json =
-    """
-        {
-            "status": "ok",
-            "totalResults": 13321,
-            "articles": [
-                {
-                    "source": {
-                        "id": "engadget",
-                        "name": "Engadget"
-                    },
-                    "author": "Jon Fingas",
-                    "title": "Google Maps now shows toll prices on Android and iOS",
-                    "description": "Google Maps can already help you avoid toll roads, but now it will let you know just how much you'll pay if you take those (supposedly) quicker routes. Android Policenotes that Google has enabled its previously promised toll pricing in Maps for Android and iO…",
-                    "url": "https://www.engadget.com/google-maps-toll-road-prices-134349642.html",
-                    "urlToImage": "https://s.yimg.com/os/creatr-uploaded-images/2022-06/804a8140-ebe4-11ec-bbee-cd90acb31749",
-                    "publishedAt": "2022-06-14T13:43:49Z",
-                    "content": "Google Maps can already help you avoid toll roads, but now it will let you know just how much you'll pay if you take those (supposedly) quicker routes. Android Policenotes that Google has enabled its… [+585 chars]"
-                }
-            ]
-        }
-    """
-        
-        do {
-            let jsonData = Data(json.utf8)
-            let news: LCNewsDataResponse = try JSONDecoder().decode(LCNewsDataResponse.self, from: jsonData)
-            guard news.articles.isEmpty == false else { return }
-            let article = news.articles[0]
-            self.fill(with: article)
-        } catch {
-            print(String(describing: error))
-        }
-    }
-    
     func fill(with data: LCArticleResponse) {
-        if let url = URL(string: data.urlToImage) {
+        if let url = URL(string: data.urlToImage ?? "") {
             articleImageView.kf.indicatorType = .activity
             articleImageView.kf.setImage(with: url, options: [.transition(.fade(0.25))])
         }
@@ -213,18 +156,17 @@ final class NewsTableViewCell: UITableViewCell {
         articleDescriptionLabel.attributedText = NSMutableAttributedString(
             string: data.articleDescription
         )
-        .formatForNewsDescription()
-        articleAuthorLabel.text = data.author
+        .addLineSpacing(4)
+        if let author = data.author, author.isEmpty == false {
+            articleAuthorLabel.text = "\(data.author ?? "") - \(data.source.name)"
+        } else {
+            articleAuthorLabel.text = data.source.name
+        }
         articlePublishTimeLabel.text = data.publishedAt.convertToDateInterval() + " ago"
     }
     
     @objc private func shareButtonTapped() {
         onShareButtonTap?()
-    }
-    
-    @objc private func saveButtonTapped() {
-        onSaveButtonTap?()
-        saveButton.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
     }
     
 }

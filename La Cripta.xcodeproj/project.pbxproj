@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		382EBB7628920F3D004C5E1D /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382EBB7528920F3D004C5E1D /* Double+Extension.swift */; };
+		382EBB7828921A55004C5E1D /* LCNewsSharer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382EBB7728921A55004C5E1D /* LCNewsSharer.swift */; };
+		38502E342890CE45003E0C75 /* LCSubscriptionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38502E332890CE45003E0C75 /* LCSubscriptionMessage.swift */; };
+		38502E372890DF5F003E0C75 /* LiveUpdatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38502E362890DF5F003E0C75 /* LiveUpdatesViewController.swift */; };
+		38502E392890EA95003E0C75 /* LCWSDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38502E382890EA95003E0C75 /* LCWSDataResponse.swift */; };
 		3893E212288F91E600F7AB33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893E211288F91E600F7AB33 /* AppDelegate.swift */; };
 		3893E214288F91E600F7AB33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893E213288F91E600F7AB33 /* SceneDelegate.swift */; };
 		3893E216288F91E600F7AB33 /* ToplistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893E215288F91E600F7AB33 /* ToplistsViewController.swift */; };
@@ -23,6 +28,8 @@
 		3893E257288FAEAF00F7AB33 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893E256288FAEAF00F7AB33 /* String+Extension.swift */; };
 		3893E25B288FB09300F7AB33 /* LCNewsDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893E25A288FB09300F7AB33 /* LCNewsDataResponse.swift */; };
 		3893E25E288FC12000F7AB33 /* NSMutableAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893E25D288FC12000F7AB33 /* NSMutableAttributedString+Extension.swift */; };
+		3893E261288FF42F00F7AB33 /* LCToplistDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893E260288FF42F00F7AB33 /* LCToplistDataResponse.swift */; };
+		38FBCCA7289014C40027690E /* NewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FBCCA6289014C40027690E /* NewsAPI.swift */; };
 		568B8987C817A54B8CCFACE9 /* Pods_La_Cripta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4296554F448C913BC50A511E /* Pods_La_Cripta.framework */; };
 		C69D766DFDC3D6AB190E235E /* Pods_La_CriptaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA88E3464E66B526CBEA8DC6 /* Pods_La_CriptaTests.framework */; };
 		D9814304506FE59A71F57303 /* Pods_La_Cripta_La_CriptaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0085AABF9B3E72D5F2EDB191 /* Pods_La_Cripta_La_CriptaUITests.framework */; };
@@ -48,6 +55,11 @@
 /* Begin PBXFileReference section */
 		0085AABF9B3E72D5F2EDB191 /* Pods_La_Cripta_La_CriptaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_La_Cripta_La_CriptaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		160B221C185FD1F8F5AC2917 /* Pods-La CriptaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-La CriptaTests.release.xcconfig"; path = "Target Support Files/Pods-La CriptaTests/Pods-La CriptaTests.release.xcconfig"; sourceTree = "<group>"; };
+		382EBB7528920F3D004C5E1D /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		382EBB7728921A55004C5E1D /* LCNewsSharer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCNewsSharer.swift; sourceTree = "<group>"; };
+		38502E332890CE45003E0C75 /* LCSubscriptionMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCSubscriptionMessage.swift; sourceTree = "<group>"; };
+		38502E362890DF5F003E0C75 /* LiveUpdatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveUpdatesViewController.swift; sourceTree = "<group>"; };
+		38502E382890EA95003E0C75 /* LCWSDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCWSDataResponse.swift; sourceTree = "<group>"; };
 		3893E20E288F91E600F7AB33 /* La Cripta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "La Cripta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3893E211288F91E600F7AB33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3893E213288F91E600F7AB33 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +80,8 @@
 		3893E256288FAEAF00F7AB33 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		3893E25A288FB09300F7AB33 /* LCNewsDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCNewsDataResponse.swift; sourceTree = "<group>"; };
 		3893E25D288FC12000F7AB33 /* NSMutableAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extension.swift"; sourceTree = "<group>"; };
+		3893E260288FF42F00F7AB33 /* LCToplistDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCToplistDataResponse.swift; sourceTree = "<group>"; };
+		38FBCCA6289014C40027690E /* NewsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPI.swift; sourceTree = "<group>"; };
 		3DB606B534D3393D282F32E1 /* Pods-La Cripta-La CriptaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-La Cripta-La CriptaUITests.debug.xcconfig"; path = "Target Support Files/Pods-La Cripta-La CriptaUITests/Pods-La Cripta-La CriptaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4296554F448C913BC50A511E /* Pods_La_Cripta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_La_Cripta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BF0381F06BCC05BC80966E1 /* Pods-La Cripta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-La Cripta.debug.xcconfig"; path = "Target Support Files/Pods-La Cripta/Pods-La Cripta.debug.xcconfig"; sourceTree = "<group>"; };
@@ -105,6 +119,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38502E2C2890CD76003E0C75 /* RestAPI */ = {
+			isa = PBXGroup;
+			children = (
+				3893E25F288FF40E00F7AB33 /* Entity */,
+				3893E244288F97BA00F7AB33 /* CryptocompareAPI.swift */,
+			);
+			path = RestAPI;
+			sourceTree = "<group>";
+		};
+		38502E2D2890CD87003E0C75 /* WebSockets */ = {
+			isa = PBXGroup;
+			children = (
+				38502E322890CE03003E0C75 /* Entity */,
+			);
+			path = WebSockets;
+			sourceTree = "<group>";
+		};
+		38502E322890CE03003E0C75 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				38502E332890CE45003E0C75 /* LCSubscriptionMessage.swift */,
+				38502E382890EA95003E0C75 /* LCWSDataResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		38502E352890DF45003E0C75 /* LiveUpdates */ = {
+			isa = PBXGroup;
+			children = (
+				38502E362890DF5F003E0C75 /* LiveUpdatesViewController.swift */,
+			);
+			path = LiveUpdates;
+			sourceTree = "<group>";
+		};
 		3893E205288F91E600F7AB33 = {
 			isa = PBXGroup;
 			children = (
@@ -130,8 +178,8 @@
 		3893E210288F91E600F7AB33 /* La Cripta */ = {
 			isa = PBXGroup;
 			children = (
-				3893E24C288F9DAD00F7AB33 /* Utility */,
 				3893E246288F992C00F7AB33 /* App */,
+				3893E24C288F9DAD00F7AB33 /* Utility */,
 				3893E241288F974300F7AB33 /* DataLayer */,
 				3893E247288F995600F7AB33 /* PresentationLayer */,
 				3893E21A288F91EA00F7AB33 /* Assets.xcassets */,
@@ -195,6 +243,7 @@
 		3893E247288F995600F7AB33 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				38502E352890DF45003E0C75 /* LiveUpdates */,
 				3893E250288FA3D300F7AB33 /* News */,
 				3893E248288F998E00F7AB33 /* Toplists */,
 			);
@@ -222,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				3893E24D288F9DB400F7AB33 /* Extensions */,
+				382EBB7728921A55004C5E1D /* LCNewsSharer.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -232,6 +282,7 @@
 				3893E24E288F9DC000F7AB33 /* UIView+Extension.swift */,
 				3893E256288FAEAF00F7AB33 /* String+Extension.swift */,
 				3893E25D288FC12000F7AB33 /* NSMutableAttributedString+Extension.swift */,
+				382EBB7528920F3D004C5E1D /* Double+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -256,7 +307,8 @@
 		3893E258288FB07B00F7AB33 /* CryptoCompare */ = {
 			isa = PBXGroup;
 			children = (
-				3893E244288F97BA00F7AB33 /* CryptocompareAPI.swift */,
+				38502E2D2890CD87003E0C75 /* WebSockets */,
+				38502E2C2890CD76003E0C75 /* RestAPI */,
 			);
 			path = CryptoCompare;
 			sourceTree = "<group>";
@@ -265,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				3893E25C288FB13900F7AB33 /* Entity */,
+				38FBCCA6289014C40027690E /* NewsAPI.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -273,6 +326,14 @@
 			isa = PBXGroup;
 			children = (
 				3893E25A288FB09300F7AB33 /* LCNewsDataResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		3893E25F288FF40E00F7AB33 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				3893E260288FF42F00F7AB33 /* LCToplistDataResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -539,16 +600,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				3893E24F288F9DC000F7AB33 /* UIView+Extension.swift in Sources */,
+				38502E342890CE45003E0C75 /* LCSubscriptionMessage.swift in Sources */,
 				3893E257288FAEAF00F7AB33 /* String+Extension.swift in Sources */,
 				3893E25E288FC12000F7AB33 /* NSMutableAttributedString+Extension.swift in Sources */,
 				3893E216288F91E600F7AB33 /* ToplistsViewController.swift in Sources */,
 				3893E255288FA46500F7AB33 /* NewsTableViewCell.swift in Sources */,
 				3893E212288F91E600F7AB33 /* AppDelegate.swift in Sources */,
+				382EBB7628920F3D004C5E1D /* Double+Extension.swift in Sources */,
+				38502E392890EA95003E0C75 /* LCWSDataResponse.swift in Sources */,
 				3893E214288F91E600F7AB33 /* SceneDelegate.swift in Sources */,
 				3893E245288F97BA00F7AB33 /* CryptocompareAPI.swift in Sources */,
 				3893E25B288FB09300F7AB33 /* LCNewsDataResponse.swift in Sources */,
+				38502E372890DF5F003E0C75 /* LiveUpdatesViewController.swift in Sources */,
 				3893E252288FA3E500F7AB33 /* NewsViewController.swift in Sources */,
 				3893E24B288F99B500F7AB33 /* ToplistsTableViewCell.swift in Sources */,
+				382EBB7828921A55004C5E1D /* LCNewsSharer.swift in Sources */,
+				3893E261288FF42F00F7AB33 /* LCToplistDataResponse.swift in Sources */,
+				38FBCCA7289014C40027690E /* NewsAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,7 +714,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -700,7 +768,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -734,7 +802,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -762,7 +830,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

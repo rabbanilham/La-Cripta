@@ -11,7 +11,7 @@ final class ToplistsTableViewCell: UITableViewCell {
     var nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 18, weight: .medium)
+        label.font = .systemFont(ofSize: 18, weight: .semibold)
         return label
     }()
     var fullNameLabel: UILabel = {
@@ -24,7 +24,7 @@ final class ToplistsTableViewCell: UITableViewCell {
     var priceLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 18, weight: .medium)
+        label.font = .systemFont(ofSize: 18, weight: .semibold)
         return label
     }()
     var tickerView: UIView = {
@@ -81,23 +81,64 @@ final class ToplistsTableViewCell: UITableViewCell {
         ])
     }
     
-    func fillWithDummyData() {
-        nameLabel.text = "BTC"
-        fullNameLabel.text = "Bitcoin"
-        priceLabel.text = "$ 42,303.9"
-        tickerLabel.text = "-94.63(0.22%)"
-        handleTickerValue()
-    }
-    
-    private func handleTickerValue() {
-        if tickerLabel.text?.first == "+" {
+    func fill(with data: LCToplistResponse, changeDuration: valueChangeDuration) {
+        contentView.fadeOut()
+        nameLabel.text = data.coinInfo.name
+        fullNameLabel.text = data.coinInfo.fullName
+        let change: Double? = {
+            switch changeDuration {
+            case .day:
+                return data.raw?.usd.changeDay
+            case .hour:
+                return data.raw?.usd.changeHour
+            case .last24Hour:
+                return data.raw?.usd.change24Hour
+            }
+        }()
+        guard let price = data.raw?.usd.price,
+              let change = change
+        else { return }
+        let roundedChange = round(change * 100) / 100.0
+        var changePercentage = ((price + change) / price)
+        var changeString = ""
+        if change > 0 {
+            changePercentage = (changePercentage - 1.0) * 100
+            let changePercentageString = String(format: "%.2f", changePercentage)
+            changeString = "+\(roundedChange) (+\(changePercentageString)%)"
             tickerView.backgroundColor = .systemGreen
         } else {
+            changePercentage = (1.0 - changePercentage) * 100
+            let changePercentageString = String(format: "%.2f", changePercentage)
+            changeString = "\(roundedChange) (-\(changePercentageString)%)"
             tickerView.backgroundColor = .systemRed
         }
+        priceLabel.text = price.convertToCurrency()
+        tickerLabel.text = changeString
+        contentView.fadeIn()
     }
     
-//    func fill(with data: ) {
-//        
-//    }
+    func fill(with liveData: LCWSDataResponse, fullName: String, openValue: Double?) {
+        contentView.fadeOut()
+        nameLabel.text = liveData.fromSymbol
+        fullNameLabel.text = fullName
+        let price = liveData.price
+        let change = price - (openValue ?? 0)
+        let roundedChange = round(change * 100) / 100.0
+        var changePercentage = ((price + change) / price)
+        var changeString = ""
+        if change > 0 {
+            changePercentage = (changePercentage - 1.0) * 100
+            let changePercentageString = String(format: "%.2f", changePercentage)
+            changeString = "+\(roundedChange) (+\(changePercentageString)%)"
+            tickerView.backgroundColor = .systemGreen
+        } else {
+            changePercentage = (1.0 - changePercentage) * 100
+            let changePercentageString = String(format: "%.2f", changePercentage)
+            changeString = "\(roundedChange) (-\(changePercentageString)%)"
+            tickerView.backgroundColor = .systemRed
+        }
+        priceLabel.text = price.convertToCurrency()
+        tickerLabel.text = changeString
+        contentView.fadeIn()
+    }
 }
