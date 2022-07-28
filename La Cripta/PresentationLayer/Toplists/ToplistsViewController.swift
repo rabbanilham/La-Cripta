@@ -166,6 +166,7 @@ final class ToplistsViewController: UITableViewController {
             completion(true)
             self.navigationController?.pushViewController(viewController, animated: true)
         }
+        action.backgroundColor = .systemBlue
         let swipeActions = UISwipeActionsConfiguration(actions: [action])
         return swipeActions
     }
