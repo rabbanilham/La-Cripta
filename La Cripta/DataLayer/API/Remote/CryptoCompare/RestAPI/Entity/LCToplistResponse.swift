@@ -22,12 +22,10 @@ struct LCToplistResponse: Codable {
 struct LCToplistsDataResponse: Codable {
     let coinInfo: LCCoinInfoResponse
     let raw: LCRawInfoResponse?
-//    let display: Display?
 
     enum CodingKeys: String, CodingKey {
         case coinInfo = "CoinInfo"
         case raw = "RAW"
-//        case display = "DISPLAY"
     }
 }
 

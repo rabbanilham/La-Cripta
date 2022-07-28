@@ -16,5 +16,5 @@ struct LCWSDataResponse: Codable {
         case fromSymbol = "FSYM"
         case toSymbol = "TSYM"
         case price = "P"
-        }
+    }
 }

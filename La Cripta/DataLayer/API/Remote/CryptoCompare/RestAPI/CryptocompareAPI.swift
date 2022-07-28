@@ -9,7 +9,6 @@ import Foundation
 import Alamofire
 
 struct CryptocompareAPI {
-    
     static let shared = CryptocompareAPI()
     let baseUrl: String = "https://min-api.cryptocompare.com/data/top/totalvolfull"
     let authKey: String = "c659c5d742dd729eb6590ffd2369bc8bae00c99577485b09051165f4813b5e0b"
@@ -18,7 +17,6 @@ struct CryptocompareAPI {
         _ completion: @escaping (LCToplistResponse?, AFError?) -> Void
     ) {
         let headers: HTTPHeaders = [ "authorization" : authKey ]
-//        let queries: urlq
         AF.request(
             baseUrl + "?limit=50&tsym=USD",
             method: .get,

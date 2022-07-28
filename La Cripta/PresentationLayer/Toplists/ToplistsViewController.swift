@@ -17,7 +17,6 @@ final class ToplistsViewController: UITableViewController {
     
     private var api: CryptocompareAPI = CryptocompareAPI.shared
     private var toplists: Array<LCToplistsDataResponse> = []
-    private var newsApiEndpoint: NewsAPI.newsEndpoint = .everything
     private var changeDuration: valueChangeDuration = .day
     private var loadingIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView()
@@ -26,6 +25,7 @@ final class ToplistsViewController: UITableViewController {
         indicator.color = .label
         return indicator
     }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -126,7 +126,7 @@ final class ToplistsViewController: UITableViewController {
     
     private func presentNewsController(index: IndexPath.Index) {
         let coinName = toplists[index].coinInfo.fullName
-        let newsApi = NewsAPI(newsType: newsApiEndpoint, coinName: coinName.lowercased())
+        let newsApi = NewsAPI(query: coinName.lowercased())
         let viewController = NewsViewController(api: newsApi)
         viewController.navigationItem.title = "\(coinName) News"
         let navigationController = UINavigationController(rootViewController: viewController)
@@ -172,6 +172,7 @@ final class ToplistsViewController: UITableViewController {
     
     private func setupNavigationBar() {
         navigationController?.navigationBar.tintColor = .label
+        navigationController?.navigationBar.prefersLargeTitles = true
         let changeDurationButton = UIBarButtonItem(
             image: UIImage(systemName: "clock.arrow.2.circlepath"),
             style: .plain,

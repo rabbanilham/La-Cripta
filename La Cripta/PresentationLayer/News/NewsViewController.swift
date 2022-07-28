@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import SafariServices
 import Kingfisher
 
-final class NewsViewController: UITableViewController {
+final class NewsViewController: UITableViewController, SFSafariViewControllerDelegate {
     
     private var articles: Array<LCArticleResponse> = []
     private var loadingIndicator: UIActivityIndicatorView = {
@@ -56,7 +57,17 @@ final class NewsViewController: UITableViewController {
         cell.selectionStyle = .none
         let article = articles[row]
         cell.fill(with: article)
+        cell.onShareButtonTap = { [weak self] in
+            guard let self = self else { return }
+            self.showShareActivityController(article: article, row: row)
+        }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        let article = articles[row]
+        presentSafariViewController(article: article)
     }
     
     private func setupTableView() {
@@ -128,7 +139,6 @@ final class NewsViewController: UITableViewController {
     
     private func sortMenuElements() -> [UIMenuElement] {
         var menus: [UIMenuElement] = []
-        
         let sortByLatest = UIAction(
             title: "Latest",
             image: UIImage(systemName: "arrow.uturn.down"),
@@ -147,15 +157,6 @@ final class NewsViewController: UITableViewController {
             self.articles.sort(by: {$0.publishedAt < $1.publishedAt})
             self.tableView.reloadData()
         }
-        let sortByPopularity = UIAction(
-            title: "Popularity",
-            image: UIImage(systemName: "star.fill"),
-            identifier: nil
-        ) { [weak self] _ in
-            guard let self = self else { return }
-            
-            self.tableView.reloadData()
-        }
         let random = UIAction(
             title: "Random",
             image: UIImage(systemName: "arrow.triangle.swap"),
@@ -167,10 +168,27 @@ final class NewsViewController: UITableViewController {
         }
         menus.append(sortByLatest)
         menus.append(sortByOldest)
-        menus.append(sortByPopularity)
         menus.append(random)
         
         return menus
+    }
+    
+    private func presentSafariViewController(article: LCArticleResponse) {
+        if let url = URL(string: article.url) {
+            let safariViewController = SFSafariViewController(url: url)
+            safariViewController.delegate = self
+            present(safariViewController, animated: true)
+        }
+    }
+    
+    private func showShareActivityController(article: LCArticleResponse, row: Int) {
+        guard let cell = tableView.cellForRow(at: IndexPath(row: row, section: 0)) as? NewsTableViewCell else { return }
+        if let image = cell.articleImageView.image {
+            LCNewsSharer.shared.share(in: self, article: article, image: image)
+        } else {
+            LCNewsSharer.shared.share(in: self, article: article, image: UIImage(systemName: "photo.fill")!)
+        }
+        
     }
     
     private func performDismissView() {

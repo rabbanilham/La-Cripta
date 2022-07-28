@@ -112,7 +112,7 @@ final class ToplistsTableViewCell: UITableViewCell {
             changeString = "\(roundedChange) (-\(changePercentageString)%)"
             tickerView.backgroundColor = .systemRed
         }
-        priceLabel.text = "\(price)".convertToCurrency()
+        priceLabel.text = price.convertToCurrency()
         tickerLabel.text = changeString
         contentView.fadeIn()
     }
@@ -137,7 +137,7 @@ final class ToplistsTableViewCell: UITableViewCell {
             changeString = "\(roundedChange) (-\(changePercentageString)%)"
             tickerView.backgroundColor = .systemRed
         }
-        priceLabel.text = "\(price)".convertToCurrency()
+        priceLabel.text = price.convertToCurrency()
         tickerLabel.text = changeString
         contentView.fadeIn()
     }

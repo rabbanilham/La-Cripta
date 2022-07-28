@@ -10,24 +10,17 @@ import Alamofire
 
 struct NewsAPI {
     var urlString: String
-    var newsType: String
     
-    enum newsEndpoint: String {
-        case everything = "everything"
-        case topHeadlines = "top-headlines"
-    }
-    
-    init(newsType: newsEndpoint, coinName: String) {
-        self.newsType = newsType.rawValue
+    init(query: String) {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "newsapi.org"
-        urlComponents.path = "/v2/\(newsType.rawValue)"
+        urlComponents.path = "/v2/everything"
         urlComponents.queryItems = [
-            URLQueryItem(name: "q", value: coinName)
+            URLQueryItem(name: "q", value: query)
         ]
         guard let urlString = urlComponents.url?.absoluteString else {
-            self.urlString = "https://newsapi.org/v2/everything?q=\(coinName)"
+            self.urlString = "https://newsapi.org/v2/everything?q=\(query)"
             return
         }
         self.urlString = urlString

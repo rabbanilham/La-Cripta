@@ -13,7 +13,6 @@ struct LCNewsDataResponse: Codable {
     let articles: [LCArticleResponse]
 }
 
-// MARK: - Article
 struct LCArticleResponse: Codable {
     let source: LCNewsSourceResponse
     let author: String?
@@ -30,7 +29,6 @@ struct LCArticleResponse: Codable {
     }
 }
 
-// MARK: - Source
 struct LCNewsSourceResponse: Codable {
     let id: String?
     let name: String

@@ -8,10 +8,10 @@
 import UIKit
 
 extension NSMutableAttributedString {
-    func formatForNewsDescription() -> NSMutableAttributedString {
+    func addLineSpacing(_ spacing: CGFloat) -> NSMutableAttributedString {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineBreakMode = .byTruncatingTail
-        paragraphStyle.lineSpacing = 4
+        paragraphStyle.lineSpacing = spacing
         paragraphStyle.alignment = .justified
         self.addAttribute(
             .paragraphStyle,

@@ -10,7 +10,7 @@ import Kingfisher
 
 final class NewsTableViewCell: UITableViewCell {
     
-    var borderView: UIView = {
+    private var borderView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemBackground
@@ -23,7 +23,6 @@ final class NewsTableViewCell: UITableViewCell {
         view.layer.shadowOffset = CGSize(width: 0, height: 0)
         return view
     }()
-    
     var articleImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -32,24 +31,21 @@ final class NewsTableViewCell: UITableViewCell {
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
-    
-    var articleTitleLabel: UILabel = {
+    private var articleTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.numberOfLines = 0
         return label
     }()
-    
-    var articleDescriptionLabel: UILabel = {
+    private var articleDescriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 14, weight: .regular)
         label.numberOfLines = 0
         return label
     }()
-    
-    var bottomSquareView: UIView = {
+    private var bottomSquareView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.clipsToBounds = true
@@ -58,8 +54,7 @@ final class NewsTableViewCell: UITableViewCell {
         view.heightAnchor.constraint(greaterThanOrEqualToConstant: 10).isActive = true
         return view
     }()
-    
-    var articleAuthorLabel: UILabel = {
+    private var articleAuthorLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 1
@@ -67,8 +62,7 @@ final class NewsTableViewCell: UITableViewCell {
         label.textColor = .systemBackground
         return label
     }()
-    
-    var articlePublishTimeLabel: UILabel = {
+    private var articlePublishTimeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 1
@@ -77,8 +71,7 @@ final class NewsTableViewCell: UITableViewCell {
         label.textColor = .systemBackground
         return label
     }()
-    
-    var shareButton: UIButton = {
+    private var shareButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.tintColor = .systemBackground
@@ -87,19 +80,7 @@ final class NewsTableViewCell: UITableViewCell {
         return button
     }()
     
-    var saveButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.tintColor = .systemBackground
-        button.setImage(UIImage(systemName: "bookmark"), for: .normal)
-        button.addTarget(Any.self, action: #selector(saveButtonTapped), for: .touchUpInside)
-        return button
-    }()
-    
-    typealias OnShareButtonTap = () -> Void
-    var onShareButtonTap: OnShareButtonTap?
-    typealias OnSaveButtonTap = () -> Void
-    var onSaveButtonTap: OnShareButtonTap?
+    var onShareButtonTap: (() -> Void)?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -122,8 +103,7 @@ final class NewsTableViewCell: UITableViewCell {
         bottomSquareView.addSubviews(
             articleAuthorLabel,
             articlePublishTimeLabel,
-            shareButton,
-            saveButton
+            shareButton
         )
         
         let margin = contentView.layoutMarginsGuide
@@ -163,10 +143,7 @@ final class NewsTableViewCell: UITableViewCell {
             articlePublishTimeLabel.leadingAnchor.constraint(equalTo: articleAuthorLabel.leadingAnchor),
             
             shareButton.trailingAnchor.constraint(equalTo: bottomSquareView.trailingAnchor, constant: -16),
-            shareButton.centerYAnchor.constraint(equalTo: bottomSquareView.centerYAnchor),
-            
-            saveButton.trailingAnchor.constraint(equalTo: shareButton.leadingAnchor, constant: -16),
-            saveButton.centerYAnchor.constraint(equalTo: shareButton.centerYAnchor)
+            shareButton.centerYAnchor.constraint(equalTo: bottomSquareView.centerYAnchor)
         ])
     }
     
@@ -179,7 +156,7 @@ final class NewsTableViewCell: UITableViewCell {
         articleDescriptionLabel.attributedText = NSMutableAttributedString(
             string: data.articleDescription
         )
-        .formatForNewsDescription()
+        .addLineSpacing(4)
         if let author = data.author, author.isEmpty == false {
             articleAuthorLabel.text = "\(data.author ?? "") - \(data.source.name)"
         } else {
@@ -190,11 +167,6 @@ final class NewsTableViewCell: UITableViewCell {
     
     @objc private func shareButtonTapped() {
         onShareButtonTap?()
-    }
-    
-    @objc private func saveButtonTapped() {
-        onSaveButtonTap?()
-        saveButton.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
     }
     
 }
