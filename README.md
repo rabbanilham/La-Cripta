@@ -19,8 +19,9 @@ Besides the main features, there are several additional features to make the app
 
 1. Show live price update from a cryptocurrency. User can swipe a cell from right to show the live update page. Data retrieved from [CryptoCompare WebSocket API](https://min-api.cryptocompare.com/documentation/websockets)
 2. Change the price change duration. User can choose either by day, hour, and the last 24 hours.
-3. Sort news by the latest, oldest, or just in a random order.
-4. Share news to friends or colleagues.
+3. Sort news by the latest, oldest, or in a random order.
+4. Read the news detail by tapping the news cell.
+5. Share news to friends or colleagues just by tapping the share button.
 
 
 ### Solution explanation
@@ -58,7 +59,7 @@ La Cripta started small, so it uses MVC as its design pattern.
 ![Simulator Screen Shot - iPhone 13 - 2022-07-28 at 11 03 55](https://user-images.githubusercontent.com/99727731/181418211-517412a9-f0f0-420a-b64a-e9ad805bdab1.png)
 
 
-4. Live update will start automatically after entering the live update page, thanks to the `connectToSocket`, `sendSubscription`, and `receiveMessage` methods called in `viewDidLoad`.
+4. Live update will start automatically after entering the live update page, thanks to the `connectToSocket`, `sendSubscription`, and `receiveMessage` methods called in `viewDidLoad`. **Some internet provider may block your connection to the live update view. If this happens, try using another network or connect to a VPN**
 
 ![Simulator Screen Shot - iPhone 13 - 2022-07-28 at 11 03 49](https://user-images.githubusercontent.com/99727731/181418241-7878d03d-e961-4307-bb0b-abafd4525f2e.png)
 
