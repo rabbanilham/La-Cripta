@@ -14,7 +14,7 @@ struct CryptocompareAPI {
     let authKey: String = "c659c5d742dd729eb6590ffd2369bc8bae00c99577485b09051165f4813b5e0b"
     
     func getToplists(
-        _ completion: @escaping (LCToplistResponse?, AFError?) -> Void
+        _ completion: @escaping (LCToplistDataResponse?, AFError?) -> Void
     ) {
         let headers: HTTPHeaders = [ "authorization" : authKey ]
         AF.request(
@@ -23,7 +23,7 @@ struct CryptocompareAPI {
             headers: headers
         )
         .validate()
-        .responseDecodable(of: LCToplistResponse.self) { response in
+        .responseDecodable(of: LCToplistDataResponse.self) { response in
             switch response.result {
             case let .success(data):
                 completion(data, nil)

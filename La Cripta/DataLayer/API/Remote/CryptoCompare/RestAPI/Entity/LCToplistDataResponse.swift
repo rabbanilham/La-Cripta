@@ -7,19 +7,19 @@
 
 import Foundation
 
-struct LCToplistResponse: Codable {
+struct LCToplistDataResponse: Codable {
     let message: String
     let type: Int
-    let data: [LCToplistsDataResponse]
+    let toplists: [LCToplistResponse]
 
     enum CodingKeys: String, CodingKey {
         case message = "Message"
         case type = "Type"
-        case data = "Data"
+        case toplists = "Data"
     }
 }
 
-struct LCToplistsDataResponse: Codable {
+struct LCToplistResponse: Codable {
     let coinInfo: LCCoinInfoResponse
     let raw: LCRawInfoResponse?
 

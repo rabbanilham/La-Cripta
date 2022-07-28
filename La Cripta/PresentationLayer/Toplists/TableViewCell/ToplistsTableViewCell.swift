@@ -81,7 +81,7 @@ final class ToplistsTableViewCell: UITableViewCell {
         ])
     }
     
-    func fill(with data: LCToplistsDataResponse, changeDuration: valueChangeDuration) {
+    func fill(with data: LCToplistResponse, changeDuration: valueChangeDuration) {
         contentView.fadeOut()
         nameLabel.text = data.coinInfo.name
         fullNameLabel.text = data.coinInfo.fullName

@@ -16,7 +16,7 @@ enum valueChangeDuration {
 final class ToplistsViewController: UITableViewController {
     
     private var api: CryptocompareAPI = CryptocompareAPI.shared
-    private var toplists: Array<LCToplistsDataResponse> = []
+    private var toplists: Array<LCToplistResponse> = []
     private var changeDuration: valueChangeDuration = .day
     private var loadingIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView()
@@ -83,7 +83,7 @@ final class ToplistsViewController: UITableViewController {
                 self?.present(alert, animated: true)
                 return
             }
-            self.toplists = result.data
+            self.toplists = result.toplists
             self.tableView.reloadData()
             self.loadingIndicator.stopAnimating()
         }
@@ -118,7 +118,7 @@ final class ToplistsViewController: UITableViewController {
                 self?.present(alert, animated: true)
                 return
             }
-            self.toplists = result.data
+            self.toplists = result.toplists
             self.tableView.reloadData()
             self.refreshControl?.endRefreshing()
         }
