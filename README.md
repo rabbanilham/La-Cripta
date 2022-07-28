@@ -7,7 +7,7 @@ La Cripta is an app created for Nostratech iOS Technical Challenge. The app has 
 1. Get at least 50 cryptocurrency ticker data and display them in a `UITableViewController`.
   - Data retrieved from [CryptoCompare Toplists API](https://min-api.cryptocompare.com/documentation?key=Toplists&cat=topTotalTopTierVolumeEndpointFull)
   - User can refresh the list by pulling from the top.
-  - Ticker color turns green when the price increases and red for thr opposite.
+  - Ticker color turns green when the price increases and red for the opposite, or it will turns yellow if no change happens (which is rarely happens).
   
 2. Display news related to the currency selected upon tapping a cell from the toplists.
   - Data retrieved from [News API](https://min-api.cryptocompare.com/documentation?key=News&cat=latestNewsArticlesEndpoint).
@@ -47,8 +47,7 @@ La Cripta started small, so it uses MVC as its design pattern.
 #### Logics
 1. After loading the `ToplistsViewController`, `ToplistsAPI` will fetch data from the API. If it successfully get the data, it will decode the data to `LCToplistsDataResponse`, assign the `toplists` let to the view controller's toplists array, and reload the table view. The number of cell returned equals to number of toplists, and each cell filled by a toplist.
 
-![Simulator Screen Shot - iPhone 13 - 2022-07-28 at 11 03 33](https://user-images.githubusercontent.com/99727731/181418185-08083690-39e7-48cb-8fa3-d49d8dbef233.png)
-
+![Simulator Screen Shot - iPhone 13 - 2022-07-29 at 00 26 18](https://user-images.githubusercontent.com/99727731/181600377-744c1eb0-978e-49f4-9ace-ee42c223837b.png)
 
 2. Selecting a cell will present the `NewsViewController`. `NewsAPI` query is the crypto's full name, so the news shown will be related to the crypto. Fetching the news data shares the same idea as fetching the toplists data. Dismissing the news page will clear the Kingfisher cache to free up memory.
 
@@ -56,7 +55,7 @@ La Cripta started small, so it uses MVC as its design pattern.
 
 3. Swiping a cell to the left will show the present `LiveUpdateViewController` option (or swiping it all the way to the end left will automatically present it).
 
-![Simulator Screen Shot - iPhone 13 - 2022-07-28 at 11 03 55](https://user-images.githubusercontent.com/99727731/181418211-517412a9-f0f0-420a-b64a-e9ad805bdab1.png)
+![Simulator Screen Shot - iPhone 13 - 2022-07-29 at 00 27 56](https://user-images.githubusercontent.com/99727731/181600649-e987d1b2-04a4-4439-9678-879b8969a38c.png)
 
 
 4. Live update will start automatically after entering the live update page, thanks to the `connectToSocket`, `sendSubscription`, and `receiveMessage` methods called in `viewDidLoad`. **Some internet provider may block your connection to the live update view. If this happens, try using another network or connect to a VPN**
