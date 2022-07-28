@@ -106,11 +106,16 @@ final class ToplistsTableViewCell: UITableViewCell {
             let changePercentageString = String(format: "%.2f", changePercentage)
             changeString = "+\(roundedChange) (+\(changePercentageString)%)"
             tickerView.backgroundColor = .systemGreen
-        } else {
+        } else if change < 0 {
             changePercentage = (1.0 - changePercentage) * 100
             let changePercentageString = String(format: "%.2f", changePercentage)
             changeString = "\(roundedChange) (-\(changePercentageString)%)"
             tickerView.backgroundColor = .systemRed
+        } else {
+            changePercentage = (1.0 - changePercentage) * 100
+            let changePercentageString = String(format: "%.2f", changePercentage)
+            changeString = "\(roundedChange) (-\(changePercentageString)%)"
+            tickerView.backgroundColor = .systemYellow
         }
         priceLabel.text = price.convertToCurrency()
         tickerLabel.text = changeString
